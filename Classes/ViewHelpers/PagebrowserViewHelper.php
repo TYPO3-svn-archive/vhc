@@ -37,7 +37,7 @@ class Tx_Vhc_ViewHelpers_PagebrowserViewHelper extends Tx_Fluid_Core_ViewHelper_
 		'activeLinkWrap' => '<li class="activeLinkWrap">|</li>',
 		'browseLinksWrap' => '<ul class="browsebox">|</ul>',
 		'showResultsWrap' => '<div class="showResultsWrap">|</div>',
-		'browseBoxWrap' => '<div class="stdLstPageBrowser">|</div>',
+		'browseBoxWrap' => '<div class="pagebrowser">|</div>',
 		'showResultsNumbersWrap' => '|'
 	);
 	
@@ -125,7 +125,7 @@ class Tx_Vhc_ViewHelpers_PagebrowserViewHelper extends Tx_Fluid_Core_ViewHelper_
 				if ( $this->internal['showRange'] ) {
 					$pageText = ( ( $a*$results_at_a_time ) +1 ) . '-' . min( $count, ( ( $a+1 ) * $results_at_a_time ) );
 				} else {
-					$pageText = trim( $this->getLL( 'pageBrowser_page' ) . ' ' . ( $a+1 ) );
+					$pageText = trim( sprintf( $this->getLL( 'pageBrowser_page' ), ( $a+1 ) ) );
 				}
 				
 				if ( $pointer == $a ) { // current page
