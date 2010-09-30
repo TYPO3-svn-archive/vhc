@@ -23,7 +23,6 @@ class Tx_Vhc_ViewHelpers_PagebrowserViewHelper extends Tx_Fluid_Core_ViewHelper_
 	
 	private $internal = array(
 		'showRange' => false,
-		'dontLinkActivePage' => 1,
 		'pagefloat' => 'CENTER',
 		'showFirstLast' => 1,
 		'pointerName' => 'pointer',
@@ -50,9 +49,10 @@ class Tx_Vhc_ViewHelpers_PagebrowserViewHelper extends Tx_Fluid_Core_ViewHelper_
 	 * @param  integer $maxPages Maximum number of pages
 	 * @param  boolean $forceOutput Return the Pagebrowser even there is only one page
 	 * @param  integer $showResultCount Define whether to show he resultcount - or not
+	 * @param  boolean $dontLinkActivePage Defines whether to link the active page- or not
 	 * @return string the rendered Pagebrowser
 	 */
-	public function render( $resCount=0, $resultsPerPage=30, $maxPages=5, $forceOutput=false, $showResultCount=1 ) {
+	public function render( $resCount=0, $resultsPerPage=30, $maxPages=5, $forceOutput=false, $showResultCount=1, $dontLinkActivePage=true ) {
 		$count = intval( $resCount );
 		$results_at_a_time = t3lib_div::intInRange( $resultsPerPage, 1, 1000 );
 		$totalPages = ceil( $count / $results_at_a_time );
@@ -129,7 +129,7 @@ class Tx_Vhc_ViewHelpers_PagebrowserViewHelper extends Tx_Fluid_Core_ViewHelper_
 				}
 				
 				if ( $pointer == $a ) { // current page
-					if ( $this->internal['dontLinkActivePage'] ) {
+					if ( $dontLinkActivePage ) {
 						$links[] = $this->wrap( $pageText, $this->wrapper['activeLinkWrap'] );
 					} else {
 						$links[] = $this->wrap( $this->makeLink( $pageText, ( $a ? $a : '' ) ), $this->wrapper['activeLinkWrap'] );

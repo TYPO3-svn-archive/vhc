@@ -26,18 +26,18 @@
  * = Examples
  *
  * <code title="basic tel link">
- * <l:Link.TelephoneNumber number="+49 (911) 947-2824" />
+ * <l:Link.TelephoneNumber number="+49 (12345) 123-45678" />
  * </code>
  *
  * Output:
- * <a href="tel:+499119470">+49 (911) 947-2824</a>
+ * <a href="tel:+491234512345678">+49 (12345) 123-45678</a>
  *
  * <code title="Telephone number link with custom linktext">
- * <l:Link.TelephoneNumber number="+49 (911) 947-2824">some custom content</l:Link.TelephoneNumber number>
+ * <l:Link.TelephoneNumber number="+49 (12345) 123-45678">some custom content</l:Link.TelephoneNumber number>
  * </code>
  *
  * Output:
- * <a href="tel:+499119470">some custom content</a>
+ * <a href="tel:+491234512345678">some custom content</a>
  *
  * @package vhc
  * @subpackage ViewHelpers\Link

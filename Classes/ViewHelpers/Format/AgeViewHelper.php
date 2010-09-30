@@ -29,7 +29,7 @@ class Tx_Vhc_ViewHelpers_Format_AgeViewHelper extends Tx_Fluid_Core_ViewHelper_A
 	/**
 	 * Calculates the age of the given DateTime Object
 	 *
-	 * @param DateTime $date The Datetime-Object to format
+	 * @param DateTime $date The Datetime-Object to calculate the age for
 	 * @param string $label Rule how to format the age (default  min| hrs| days| yrs)
 	 * @return string The formatted age
 	 * @api

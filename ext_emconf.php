@@ -1,20 +1,21 @@
 <?php
 
 ########################################################################
-# Extension Manager/Repository config file for ext: "vhc"
-# 
-# Auto generated 08-31-2010
-# 
+# Extension Manager/Repository config file for ext "vhc".
+#
+# Auto generated 01-10-2010 00:14
+#
 # Manual updates:
-# Only the data in the array - anything else is removed by next write
+# Only the data in the array - everything else is removed by next
+# writing. "version" and "dependencies" must not be touched!
 ########################################################################
 
-$EM_CONF[$_EXTKEY] = Array (
+$EM_CONF[$_EXTKEY] = array(
 	'title' => 'View Helper Collection',
 	'description' => 'An extension to provide several viewhelpers for the usage in different extensions',
 	'category' => 'misc',
 	'shy' => 0,
-	'dependencies' => '',
+	'dependencies' => 'extbase,fluid',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
@@ -31,8 +32,8 @@ $EM_CONF[$_EXTKEY] = Array (
 	'author_company' => 'DIEHL Informatik GmbH',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
-	'version' => '1.0.0',	// Don't modify this! Managed automatically during upload to repository.
-	'_md5_values_when_last_written' => 'a:13:{s:21:"ext_conf_template.txt";s:4:"3a11";s:12:"ext_icon.gif";s:4:"b4e6";s:14:"ext_tables.php";s:4:"9d95";s:14:"ext_tables.sql";s:4:"942e";s:17:"locallang_tca.xml";s:4:"3032";s:29:"lib/class.user_langSwitch.php";s:4:"3dac";s:22:"res/css/stylesheet.css";s:4:"5417";s:33:"res/loginimages/login_avionik.jpg";s:4:"f69d";s:34:"res/loginimages/login_controls.jpg";s:4:"9c4f";s:32:"res/loginimages/login_metall.jpg";s:4:"c959";s:34:"res/loginimages/login_munition.jpg";s:4:"b940";s:32:"res/loginimages/login_pforte.jpg";s:4:"c989";s:33:"res/loginimages/login_zahnrad.jpg";s:4:"10ac";}',
+	'version' => '0.0.0',
+	'_md5_values_when_last_written' => 'a:8:{s:12:"ext_icon.gif";s:4:"b4e6";s:42:"Classes/ViewHelpers/FileiconViewHelper.php";s:4:"bb9b";s:45:"Classes/ViewHelpers/PagebrowserViewHelper.php";s:4:"8328";s:44:"Classes/ViewHelpers/Format/AgeViewHelper.php";s:4:"210f";s:49:"Classes/ViewHelpers/Format/FilesizeViewHelper.php";s:4:"97c0";s:50:"Classes/ViewHelpers/Format/StripTagsViewHelper.php";s:4:"e616";s:54:"Classes/ViewHelpers/Link/TelephoneNumberViewHelper.php";s:4:"3161";s:39:"Documentation/API/OpenOffice/en/API.sxw";s:4:"e746";}',
 	'constraints' => array(
 		'depends' => array(
 			'extbase' => '1.2.0-0.0.0',
@@ -46,4 +47,5 @@ $EM_CONF[$_EXTKEY] = Array (
 	'suggests' => array(
 	),
 );
+
 ?>
