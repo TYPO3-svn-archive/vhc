@@ -92,7 +92,7 @@ class Tx_Vhc_ViewHelpers_Link_TelephoneNumberViewHelper extends Tx_Fluid_Core_Vi
 	 */
 	private static function clearPhoneNumber( $number ) {
 		$search = array( '(', ')', '-', ' ' );
-		return str_replace( $search, '', $content );
+		return str_replace( $search, '', $number );
 	}
 }
 
