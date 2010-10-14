@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "vhc".
 #
-# Auto generated 05-10-2010 23:46
+# Auto generated 14-10-2010 22:33
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -32,8 +32,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'author_company' => 'DIEHL Informatik GmbH',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
-	'version' => '0.1.1',
-	'_md5_values_when_last_written' => 'a:8:{s:12:"ext_icon.gif";s:4:"b4e6";s:42:"Classes/ViewHelpers/FileiconViewHelper.php";s:4:"bb9b";s:45:"Classes/ViewHelpers/PagebrowserViewHelper.php";s:4:"0ff6";s:44:"Classes/ViewHelpers/Format/AgeViewHelper.php";s:4:"210f";s:49:"Classes/ViewHelpers/Format/FilesizeViewHelper.php";s:4:"97c0";s:50:"Classes/ViewHelpers/Format/StripTagsViewHelper.php";s:4:"e616";s:54:"Classes/ViewHelpers/Link/TelephoneNumberViewHelper.php";s:4:"8b1c";s:39:"Documentation/API/OpenOffice/en/API.sxw";s:4:"f236";}',
+	'version' => '0.2.0',
+	'_md5_values_when_last_written' => 'a:9:{s:12:"ext_icon.gif";s:4:"b4e6";s:42:"Classes/ViewHelpers/FileiconViewHelper.php";s:4:"bb9b";s:45:"Classes/ViewHelpers/PagebrowserViewHelper.php";s:4:"0ff6";s:44:"Classes/ViewHelpers/Format/AgeViewHelper.php";s:4:"210f";s:49:"Classes/ViewHelpers/Format/FilesizeViewHelper.php";s:4:"97c0";s:57:"Classes/ViewHelpers/Format/HtmlSpecialCharsViewHelper.php";s:4:"adb4";s:50:"Classes/ViewHelpers/Format/StripTagsViewHelper.php";s:4:"e616";s:54:"Classes/ViewHelpers/Link/TelephoneNumberViewHelper.php";s:4:"8b1c";s:39:"Documentation/API/OpenOffice/en/API.sxw";s:4:"58ff";}',
 	'constraints' => array(
 		'depends' => array(
 			'extbase' => '1.2.0-0.0.0',
