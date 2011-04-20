@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'View Helper Collection',
-	'description' => 'An extension to provide several viewhelpers for the usage in different extensions',
+	'description' => 'An extension to provide several new- or backported viewhelpers for the usage in different extensions',
 	'category' => 'misc',
 	'shy' => 0,
 	'dependencies' => 'extbase,fluid',

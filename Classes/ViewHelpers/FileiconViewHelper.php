@@ -37,10 +37,12 @@ class Tx_Vhc_ViewHelpers_FileiconViewHelper extends Tx_Fluid_ViewHelpers_ImageVi
 	 * @param integer $minHeight minimum height of the image
 	 * @param integer $maxWidth maximum width of the image
 	 * @param integer $maxHeight maximum height of the image
+	 * @param string $imgFileExt Type of the files (.gif, .jpg, .png)
+	 * @param string $default default image if current mime type cannot be found
 	 *
 	 * @return string rendered tag.
 	 */
-	public function render( $filename = NULL, $folder = NULL, $width = NULL, $height = NULL, $minWidth = NULL, $minHeight = NULL, $maxWidth = NULL, $maxHeight = NULL) {
+	public function render( $filename = NULL, $folder = NULL, $width = NULL, $height = NULL, $minWidth = NULL, $minHeight = NULL, $maxWidth = NULL, $maxHeight = NULL, $imgFileExt='gif', $default='default.gif' ) {
 		if( $filename === null ) {
 			$filename = $this->renderChildren();
 			if( $filename === null ) {
@@ -51,21 +53,21 @@ class Tx_Vhc_ViewHelpers_FileiconViewHelper extends Tx_Fluid_ViewHelpers_ImageVi
 			$folder = 'typo3/sysext/cms/tslib/media/fileicons/';
 		}
 		
-		$defaultImg = 'default.gif';
-		$extImg = self::getFileExtension( $filename ) . '.gif';
+		$extImg = self::getFileExtension( $filename ) . '.' . $imgFileExt;
 		
 		if( file_exists( $folder . $extImg ) ) {
 			$src = $folder . $extImg;
-			
 			if ( $this->arguments['alt'] === '' ) {
 				$this->tag->addAttribute( 'alt', self::getFileExtension( $filename ) );
 			}
 		} else {
-			$src = $folder . $defaultImg;
+			$src = $folder . $default;
 		}
 		
 		return parent::render( $src, $width, $height, $minWidth, $minHeight, $maxWidth, $maxHeight );
 	}
+
+
 	
 	
 	/**

@@ -31,10 +31,13 @@ class Tx_Vhc_ViewHelpers_Format_AgeViewHelper extends Tx_Fluid_Core_ViewHelper_A
 	 *
 	 * @param DateTime $date The Datetime-Object to calculate the age for
 	 * @param string $label Rule how to format the age (default  min| hrs| days| yrs)
+	 * @param string $agoLabel
+	 * @param string $toLabel
+	 * @param bool $allowNegativeValues
 	 * @return string The formatted age
 	 * @api
 	 */
-	public function render( DateTime $date = null, $labels = ' min| hrs| days| yrs' ) {
+	public function render( DateTime $date = null, $labels = ' min| hrs| days| yrs', $agoLabel='', $toLabel='', $allowNegativeValues=true ) {
 		if ( $date === 0 ) {
 			$date = $this->renderChildren();
 			if ( $date === NULL ) {
@@ -60,7 +63,8 @@ class Tx_Vhc_ViewHelpers_Format_AgeViewHelper extends Tx_Fluid_Core_ViewHelper_A
 		} else {
 			$seconds = round ($seconds/(365*24*3600)).$labelArr[3];
 		}
-		return $seconds;
+		
+		return ($seconds > 0 ? $agoLabel : $toLabel ) . ( $allowNegativeValues ? $seconds : ltrim( $seconds, '-' ) );
 	}
 }
 ?>

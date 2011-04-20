@@ -19,48 +19,17 @@
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-/**
- * Formats a filesize
- *
- * = Examples =
- *
- * <code title="Defaults">
- * <vhc:format.filesize>724766</vhc:format.filesize>
- * </code>
- *
- * Output:
- * 708 K
- *
- * <code title="With all parameters">
- * <vhc:format.filesize label=" | Kilo| Mega| Giga">724766</vhc:format.filesize>
- * </code>
- *
- * Output:
- * 708 Kilo
- *
- * @package vhc
- * @subpackage ViewHelpers\Format
- * @author Daniel Regelein <daniel.regelein@diehl-informatik.de>
- */
-class Tx_Vhc_ViewHelpers_Format_FilesizeViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class Tx_Vhc_ViewHelpers_CommentViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+	
 
 	/**
-	 * Format the numeric value as a number with grouped thousands, decimal point and
-	 * precision.
+	 * Returns Nothing
 	 *
-	 * @param int $bytes The filesize to format
-	 * @param string $label Rule how to format the size (default  B| K| M| G)
-	 * @return string The formatted file size
-	 * @api
+	 * @return string void
 	 */
-	public function render( $bytes = 0, $label = ' B| K| M| G' ) {
-		if ( $bytes === 0 ) {
-			$bytes = $this->renderChildren();
-			if ( $bytes === NULL ) {
-				return '';
-			}
-		}
-		return t3lib_div::formatSize( $bytes, $label );
+	public function render() {
+		return '';
 	}
+
 }
 ?>

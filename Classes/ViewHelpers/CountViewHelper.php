@@ -20,47 +20,47 @@
  *                                                                        */
 
 /**
- * Formats a filesize
+ * This ViewHelper counts elements of the specified array or countable object.
  *
  * = Examples =
  *
- * <code title="Defaults">
- * <vhc:format.filesize>724766</vhc:format.filesize>
+ * <code title="Count array elements">
+ * <vhc:count subject="{0:1, 1:2, 2:3, 3:4}" />
  * </code>
+ * <output>
+ * 4
+ * </output>
  *
- * Output:
- * 708 K
- *
- * <code title="With all parameters">
- * <vhc:format.filesize label=" | Kilo| Mega| Giga">724766</vhc:format.filesize>
+ * <code title="inline notation">
+ * {objects -> vhc:count()}
  * </code>
+ * <output>
+ * 10 (depending on the number of items in {objects})
+ * </output>
  *
- * Output:
- * 708 Kilo
- *
- * @package vhc
- * @subpackage ViewHelpers\Format
- * @author Daniel Regelein <daniel.regelein@diehl-informatik.de>
+ * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ * @api
  */
-class Tx_Vhc_ViewHelpers_Format_FilesizeViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class Tx_Vhc_ViewHelpers_CountViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
 
 	/**
-	 * Format the numeric value as a number with grouped thousands, decimal point and
-	 * precision.
+	 * Counts the items of a given property.
 	 *
-	 * @param int $bytes The filesize to format
-	 * @param string $label Rule how to format the size (default  B| K| M| G)
-	 * @return string The formatted file size
+	 * @param array $subject The array or ObjectStorage to iterated over
+	 * @return integer The number of elements
+	 * @author Jochen Rau <jochen.rau@typoplanet.de>
+	 * @author Bastian Waidelich <bastian@typo3.org>
 	 * @api
 	 */
-	public function render( $bytes = 0, $label = ' B| K| M| G' ) {
-		if ( $bytes === 0 ) {
-			$bytes = $this->renderChildren();
-			if ( $bytes === NULL ) {
-				return '';
-			}
+	public function render($subject = NULL) {
+		if ($subject === NULL) {
+			$subject = $this->renderChildren();
 		}
-		return t3lib_div::formatSize( $bytes, $label );
+		if (is_object($subject) && !$subject instanceof Countable) {
+			throw new Tx_Fluid_Core_ViewHelper_Exception('CountViewHelper only supports arrays and objects implementing Countable interface. Given: "' . get_class($subject) . '"', 1279808078);
+		}
+		return count($subject);
 	}
 }
+
 ?>
